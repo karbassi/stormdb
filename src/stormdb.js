@@ -79,8 +79,7 @@ class StormDB {
   }
 
   save() {
-    this.engine.write(this.state);
-    return this;
+    return this.engine.write(this.state);
   }
 }
 
