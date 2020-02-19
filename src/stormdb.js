@@ -8,6 +8,15 @@ class StormDB {
     this.pointers = [];
   }
 
+  default(defaultValue) {
+    let stateEmpty =
+      Object.keys(this.state).length === 0 && this.state.constructor === Object;
+
+    if (stateEmpty) this.state = defaultValue;
+
+    return this;
+  }
+
   push(value) {
     let list = this.value();
 
