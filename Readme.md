@@ -1,8 +1,9 @@
 <div align="center">
   <img src="./docs/logo.png" alt="StormDB logo">
 
-  <p>🌩️ StormDB is a tiny and lightweight, 0 dependency, easy-to-use JSON-based database that allows users to quickly and easily achieve data persistence by provided a wrapper to store and access data, for NodeJS, the browser or Electron.</p>
+  <p>🌩️ StormDB is a tiny and lightweight, 0 dependency, easy-to-use JSON-based database that allows users to quickly and easily achieve data persistence by provided an engine to store and access JSON data, for NodeJS the browser or Electron.</p>
 
+  <img src="https://img.shields.io/badge/dependencies-0-brightgreen">
   <img src="https://img.shields.io/badge/license-MIT-blue">
 </div>
 
