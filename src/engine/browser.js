@@ -15,8 +15,7 @@ module.exports = class LocalEngine extends Base {
     if (!exists) {
       localStorage.setItem(this.path, this.serialize({}));
       return {};
-    }
-    else {
+    } else {
       return this.read();
     }
   }
