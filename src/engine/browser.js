@@ -22,7 +22,14 @@ module.exports = class LocalEngine extends Base {
 
   read() {
     let data = localStorage.getItem(this.path);
-    return this.deserialize(data);
+
+    try {
+      let json = this.deserialize(data);
+      return json;
+    } catch(error) {
+      error.message = "Failed to load StormDB database file - invalid or corrupted format.";
+      throw error;
+    }
   }
 
   write(data) {
