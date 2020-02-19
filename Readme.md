@@ -1,12 +1,12 @@
 <div align="center">
   <img src="./docs/logo.png" alt="StormDB logo">
 
-  <p>🌩️ StormDB is a small and lightweight, 0 dependency, easy-to-use JSON-based database that allows users to quickly and easily achieve data persistence by provided a wrapper to store and access data.</p>
+  <p>🌩️ StormDB is a tiny and lightweight, 0 dependency, easy-to-use JSON-based database that allows users to quickly and easily achieve data persistence by provided a wrapper to store and access data, for NodeJS, the browser or Electron.</p>
 
   <img src="https://img.shields.io/badge/license-MIT-blue">
 </div>
 
-> Example: Quickly add a post entry under users.tom and save it to the database.
+> Example: Add a post entry under users.tom and save it to the database.
 
 ```js
 db.get("users")

@@ -1,5 +1,3 @@
-const DefaultEngine = require("./engine/local.js");
-
 class StormDB {
   constructor(engine, options = {}) {
     this.engine = engine;

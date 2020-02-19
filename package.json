@@ -1,17 +1,25 @@
 {
   "name": "stormdb",
   "version": "1.0.0",
-  "description": "StormDB is a lightweight, 0 dependency, easy-to-use JSON-based database.",
+  "description": "StormDB is a lightweight, 0 dependency, easy-to-use JSON-based database for NodeJS, the browser or Electron.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "build": "webpack --config .webpack.config.js",
+    "prepublishOnly": "npm run build"
+  },
   "repository": "TomPrograms/stormdb",
   "files": [
     "index.js",
     "src/",
+    "dist/",
     "Readme.md",
     "Changelog.md",
     "LICENSE"
   ],
   "author": "Tom",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  }
 }
