@@ -1,0 +1,17 @@
+{
+  "name": "stormdb",
+  "version": "1.0.0",
+  "description": "StormDB is a lightweight, 0 dependency, easy-to-use JSON-based database.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": "TomPrograms/stormdb",
+  "files": [
+    "index.js",
+    "src/",
+    "Readme.md",
+    "Changelog.md",
+    "LICENSE"
+  ],
+  "author": "Tom",
+  "license": "MIT"
+}
