@@ -15,6 +15,18 @@ class StormDB {
     return this;
   }
 
+  length() {
+    let value = this.value();
+
+    try {
+      let length = value.length;
+      return length;
+    } catch (error) {
+      error.message = "Couldn't find length of data type.";
+      throw error;
+    }
+  }
+
   push(value) {
     let list = this.value();
 
