@@ -118,3 +118,11 @@ db.get("list")
 // before: {'list': []}
 // after: {'list': [1]}
 ```
+
+## Credit
+
+Author: [Tom](https://github.com/TomPrograms)
+
+## License
+
+[MIT](LICENSE)
