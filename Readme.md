@@ -102,7 +102,7 @@ db.set("key.key2", "value").save();
 Set Default Data for Empty Database:
 
 ```js
-db.default({name: "tom"});
+db.default({ name: "tom" });
 
 // actual db: {}
 console.log(db.get("name")); // prints "tom"
@@ -111,7 +111,9 @@ console.log(db.get("name")); // prints "tom"
 Push Item to Array Property:
 
 ```js
-db.get("list").push(1).save();
+db.get("list")
+  .push(1)
+  .save();
 
 // before: {'list': []}
 // after: {'list': [1]}
