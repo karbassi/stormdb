@@ -63,3 +63,54 @@ StormDB is designed to be flexible, and can be used in NodeJS, the browser or ev
 
 - [Browser Usage](./examples/browser.md)
 - [NodeJS Server](./examples/node.md)
+
+## Engine API
+
+For expanding functionality, each database initialized can be expanded with the following options, in the format `new Engine(path, options);`.
+
+- `serialize` - function to serialize data before writing it to the database.
+- `deserialize` - function to deserialize data from the database.
+
+## Database Operations
+
+Change Value of Key in Database:
+
+```js
+db.get("old").set("newData");
+// before: {"old": "oldData"}
+// after: {"old": "newData"}
+```
+
+Set Key-Value Pair on Dictionary Property:
+
+```js
+db.set("key", "value").save();
+// before: {}
+// after: {"key": "value"}
+```
+
+Set Key-Value Pair on Dictionary with Shorthand Syntax:
+
+```js
+db.set("key.key2", "value").save();
+// before: {}
+// after: {"key": {"key2": "value"}}
+```
+
+Set Default Data for Empty Database:
+
+```js
+db.default({name: "tom"});
+
+// actual db: {}
+console.log(db.get("name")); // prints "tom"
+```
+
+Push Item to Array Property:
+
+```js
+db.get("list").push(1).save();
+
+// before: {'list': []}
+// after: {'list': [1]}
+```
