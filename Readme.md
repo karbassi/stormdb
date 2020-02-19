@@ -7,6 +7,8 @@
   <img src="https://img.shields.io/badge/license-MIT-blue">
 </div>
 
+<br>
+
 > Example: Add a post entry under users.tom and save it to the database.
 
 ```js
