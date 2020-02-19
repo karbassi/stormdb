@@ -12,21 +12,22 @@ module.exports = class LocalEngine extends Base {
   }
 
   init() {
-    const exists = fs.existsSync(this.path)
+    const exists = localStorage.getItem(this.path);
     if (!exists) {
-      fs.writeFileSync(this.path, this.serialize({}));
+      localStorage.setItem(this.path, this.serialize({}));
       return {};
-    } else {
+    }
+    else {
       return this.read();
     }
   }
 
   read() {
-    let data = fs.readFileSync(this.path, "UTF-8");
+    let data = localStorage.getItem(this.path);
     return this.deserialize(data);
   }
 
   write(data) {
-    fs.writeFileSync(this.path, this.serialize(data));
+    localStorage.setItem(this.path, this.serialize(data));
   }
 };
