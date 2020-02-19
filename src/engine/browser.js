@@ -26,8 +26,9 @@ module.exports = class LocalEngine extends Base {
     try {
       let json = this.deserialize(data);
       return json;
-    } catch(error) {
-      error.message = "Failed to load StormDB database file - invalid or corrupted format.";
+    } catch (error) {
+      error.message =
+        "Failed to load StormDB database file - invalid or corrupted format.";
       throw error;
     }
   }
