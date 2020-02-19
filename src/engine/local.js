@@ -16,9 +16,13 @@ module.exports = class LocalEngine extends Base {
       fs.writeFileSync(this.path, this.serialize({}));
       return {};
     } else {
-      let data = fs.readFileSync(this.path, "UTF-8");
-      return this.deserialize(data);
+      return this.read();
     }
+  }
+
+  read() {
+    let data = fs.readFileSync(this.path, "UTF-8");
+    return this.deserialize(data);
   }
 
   write(data) {
