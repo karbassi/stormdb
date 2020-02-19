@@ -7,7 +7,7 @@ StormDB can be used within the browser, by importing the necessary code using a 
 
 <script>
   // start DB with browser engine
-  const engine = new BrowserEngine("./db.stormdb");
+  const engine = new BrowserEngine("db");
   const db = StormDB(engine);
 
   // set default value for empty database
