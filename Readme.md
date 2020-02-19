@@ -29,8 +29,8 @@ Basic usage with NodeJS:
 const StormDB = require("stormdb");
 
 // start db with "./db.stormdb" storage location
-// no options.engine provided, so defaults to local file engine
-const db = StormDB("./db.stormdb");
+const engine = new StormDB.fileEngine("./db.stormdb");
+const db = StormDB(engine);
 
 // set default db value if db is empty
 db.default({ users: [] });

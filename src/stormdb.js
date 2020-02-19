@@ -86,8 +86,6 @@ class StormDB {
   }
 }
 
-module.exports = function(path, options = {}) {
-  const engine = options.engine || new DefaultEngine(path);
-
+module.exports = function(engine, options = {}) {
   return new StormDB(engine, options);
 };

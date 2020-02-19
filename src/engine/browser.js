@@ -1,5 +1,4 @@
 const Base = require("./base.js");
-const fs = require("fs");
 
 module.exports = class LocalEngine extends Base {
   constructor(path, options = {}) {
