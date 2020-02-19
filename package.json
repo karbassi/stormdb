@@ -1,7 +1,7 @@
 {
   "name": "stormdb",
   "version": "0.1.0",
-  "description": "StormDB is a lightweight, 0 dependency, easy-to-use JSON-based database for NodeJS, the browser or Electron.",
+  "description": "StormDB is a tiny, lightweight, 0 dependency, easy-to-use JSON-based database for NodeJS, the browser or Electron.",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config .webpack.config.js",
