@@ -23,5 +23,16 @@
     "prettier": "^1.19.1",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
-  }
+  },
+  "keywords": [
+    "database",
+    "JSON",
+    "file",
+    "embed",
+    "embeddable",
+    "localStorage",
+    "node",
+    "browser",
+    "electron"
+  ]
 }
