@@ -77,7 +77,7 @@ For expanding functionality, each database initialized can be expanded with the 
 - `serialize` - function to serialize data before writing it to the database.
 - `deserialize` - function to deserialize data from the database.
 
-## Database Operations
+## Database Operations Examples
 
 Change Value of Key in Database:
 
@@ -170,13 +170,48 @@ let values = db.get("users").value();
 values = values.sort((a, b) => b.value - a.value);
 
 // change value of highest element
-values[0]['value'] = 'changed';
+values[0]["value"] = "changed";
 
 // replace list with new list with changed values
 db.get("users").set(values);
 
 // save db
 db.save();
+```
+
+Map List, Squaring Each Number in List:
+
+```js
+// before = {'data': [1,2,3,4,5]}
+// after = {'data': [1,4,9,16,25]}
+
+// get values list
+let values = db.get("data").value();
+
+// map list, squaring each number
+values = values.map(x => x ** 2);
+
+// reassign list to db
+db.get("data").set(values);
+
+// save db
+db.save();
+```
+
+Leverage Serialize and Deserialize functions to encrypt and decrypt data:
+
+```js
+const engine = new StormDB.localFileEngine("./db.stormdb", {
+  serialize: data => {
+    // ecrypt and serialize data
+    return encrypt(JSON.stringify(data));
+  },
+  deserialize: data => {
+    // decrypt and deserialize data
+    return JSON.parse(decrypt(data));
+  }
+});
+const db = StormDB(engine);
 ```
 
 ## Credit
