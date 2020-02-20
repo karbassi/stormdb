@@ -20,15 +20,6 @@ class StormDB {
     return this;
   }
 
-  limit(length) {
-    if (Number.isInteger(length) && length > 0) {
-      this.set(this.value().splice(0, length));
-      return this;
-    } else {
-      throw new Error(".limit(length) must be positive integer.");
-    }
-  }
-
   push(value) {
     let list = this.value();
 
@@ -42,7 +33,7 @@ class StormDB {
 
   get(value) {
     let clone = Object.assign(Object.create(Object.getPrototypeOf(this)), this);
-    
+
     clone.pointers = [...clone.pointers];
     clone.pointers.push(value);
 
