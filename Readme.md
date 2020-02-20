@@ -3,6 +3,10 @@
 
   <p>🌩️ StormDB is a tiny, lightweight, 0 dependency, easy-to-use JSON-based database that allows users to quickly and easily achieve data persistence by provided an engine to store and access JSON data, for NodeJS the browser or Electron.</p>
 
+  <img src="https://img.shields.io/npm/v/stormdb">
+  <a href="https://bundlephobia.com/result?p=stormdb">
+    <img src="https://img.shields.io/bundlephobia/minzip/stormdb">
+  </a>
   <img src="https://img.shields.io/badge/dependencies-0-brightgreen">
   <img src="https://img.shields.io/badge/license-MIT-blue">
 </div>
@@ -91,7 +95,7 @@ db.set("key", "value").save();
 // after: {"key": "value"}
 ```
 
-Delete value:
+Delete Value:
 
 ```js
 db.delete("key");
