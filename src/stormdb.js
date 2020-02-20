@@ -20,6 +20,16 @@ class StormDB {
     return this;
   }
 
+  delete() {
+    let enclosing = this.state;
+    for (let i = 0; i < this.pointers.length - 1; i++) {
+      enclosing = enclosing[this.pointers[i]];
+    }
+
+    let final = this.pointers[this.pointers.length - 1];
+    delete enclosing[final];
+  }
+
   push(value) {
     let list = this.value();
 
