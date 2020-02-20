@@ -91,6 +91,14 @@ db.set("key", "value").save();
 // after: {"key": "value"}
 ```
 
+Delete value:
+
+```js
+db.delete("key");
+// before: {'key': 'value', 'key2': 'value2'}
+// after: {'key2': 'value2'}
+```
+
 Set Key-Value Pair on Dictionary with Shorthand Syntax:
 
 ```js
@@ -117,6 +125,54 @@ db.get("list")
 
 // before: {'list': []}
 // after: {'list': [1]}
+```
+
+Filter All Elements under 5:
+
+```js
+// before = {'list': [1,2,6,1]}
+// output = {'list': [6]}
+
+// get list from db
+let value = db.get("list").value();
+
+// delete all elements with value under 5
+value.forEach(function(el, i) {
+  if (el < 5) {
+    db.get("list")
+      .get(i)
+      .delete();
+  }
+});
+
+// remove all null elements
+value = value.filter(el => el !== null);
+db.get("list").set(value);
+
+// save db
+db.save();
+```
+
+Change Element with Highest Value:
+
+```js
+// before = {'users': [{value: 10}, {value: 5}, {value: 6}]}
+// after = {'users': [{value: "changed"}, {value: 5}, {value: 6}]}
+
+// get list from db
+let values = db.get("users").value();
+
+// sort list with highest value first
+values = values.sort((a, b) => b.value - a.value);
+
+// change value of highest element
+values[0]['value'] = 'changed';
+
+// replace list with new list with changed values
+db.get("users").set(values);
+
+// save db
+db.save();
 ```
 
 ## Credit
